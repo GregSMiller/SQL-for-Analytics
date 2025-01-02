@@ -90,7 +90,7 @@ def generate_qualifying_result(race_id, season):
         variation = random.uniform(-0.5, 0.5)  # Add some randomness
         
         # Top teams tend to be faster
-        team_advantage = {1: -0.3, 2: -0.5, 3: -0.2, 4: -0.1}.get(DRIVERS[driver_id][1], 0)
+        team_advantage = {1: -0.5, 2: -0.3, 3: -0.2, 4: -0.1}.get(DRIVERS[driver_id][1], 0)
         
         q1_time = base_time + variation + team_advantage + random.uniform(0, 0.3)
         q2_time = base_time + variation + team_advantage + random.uniform(0, 0.2) if position <= 15 else None
