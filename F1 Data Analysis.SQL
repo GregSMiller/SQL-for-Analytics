@@ -1,3 +1,10 @@
+/*
+Driver Analysis:
+Shows total points across all seasons
+Includes win and podium counts
+Calculates average points per race
+Groups results by both driver and their constructor
+*/
 --Finding the Fastest Driver (Most Points):
 WITH driver_points AS (
     SELECT 
@@ -25,6 +32,14 @@ ORDER BY total_points DESC;
 
 
 
+/*
+Track Analysis:
+Uses only Q3 times (fastest session)
+Averages top 5 times for each race
+Converts lap times to average speed in KPH
+Considers track length for accurate speed calculations
+Shows number of races counted for statistical significance
+*/
 --Finding the Fastest Track:
 WITH race_times AS (
     SELECT 
@@ -51,7 +66,14 @@ GROUP BY circuit_id, circuit_name, track_length
 ORDER BY avg_speed_kph DESC;
 
 
-
+/*
+Constructor Analysis:
+Shows total team points
+Includes wins and podiums
+Calculates average points per race
+Includes reliability percentage (finished races vs. entered)
+Accounts for both drivers' results
+*/
 --Finding the Fastest Constructor (Most Points):
 WITH constructor_stats AS (
     SELECT 
